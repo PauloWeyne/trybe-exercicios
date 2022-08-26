@@ -57,14 +57,60 @@
   </head>
   <body>
     <script>
-      // 1. Adicione a tag `h1` com o texto `Exercício 5.2 - JavaScript DOM` como filho da tag `body`;
-      let h1 = document.createElement('h1');
-      document.body.appendChild(h1);
-      h1.innerText = 'Exercício 5.2 - JavaScript DOM';
 
-       // 2. Adicione a tag `main` com a classe `main-content` como filho da tag `body`;
-       let main = document.createElement('main');
-       document.body.appendChild(main);
+    // 1. Adicione a tag `h1` com o texto `Exercício 5.2 - JavaScript DOM` como filho da tag `body`;
+      let elementH1 = document.createElement('h1');
+      document.body.appendChild(elementH1);
+      elementH1.innerText = 'Exercício 5.2 - JavaScript DOM';
+
+    // 2. Adicione a tag `main` com a classe `main-content` como filho da tag `body`;
+       let elementMain = document.createElement('main');
+       document.body.appendChild(elementMain);
+       elementMain.className = 'main-content';
+
+    // 3. Adicione a tag `section` com a classe `center-content` como filho da tag `main` criada no passo 2;
+       const elementSection = document.createElement('section');
+       elementSection.className = 'center-content';
+       elementMain.appendChild(elementSection);
+
+    // 4. Adicione a tag `p` como filho do `section` criado no passo 3 e coloque algum texto;
+      let elementP = document.createElement('p');
+      elementP.innerText = 'xablau!';
+      elementSection.appendChild(elementP);
+
+    // 5. Adicione a tag `section` com a classe `left-content` como filho da tag `main` criada no passo 2;
+      let elementSectionLeft = document.createElement('section');
+      elementMain.appendChild(elementSectionLeft);
+      elementSectionLeft.className = 'left-content';
+
+    // 6. Adicione a tag `section` com a classe `right-content` como filho da tag `main` criada no passo 2;
+      let elementSectionRight = document.createElement('section');
+      elementMain.appendChild(elementSectionRight);
+      elementSectionRight.className = 'right-content';
+
+    // 7. Adicione uma imagem com `src` configurado para o valor `https://picsum.photos/200` e classe `small-image`. Esse elemento deve ser filho do `section` criado no passo 5;
+      let image = document.createElement('img');
+      elementSectionLeft.appendChild(image);
+      image.className = 'small-image';
+      image.src = 'https://picsum.photos/200'
+
+    // 8. Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, `um`, `dois`, `três`, ... como valores da lista. Essa lista deve ser filha do `section` criado no passo 6;
+      let list = document.createElement('ul');
+      elementSectionRight.appendChild(list);
+      const arrayNumber = ['um', 'dois', 'tres', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez'];
+      for (let num in arrayNumber) {
+        const elementLi = document.createElement('li');
+        elementLi.innerHTML = arrayNumber [num];
+        list.appendChild(elementLi)
+      }
+
+    // 9. Adicione 3 tags `h3`, todas sendo filhas do `main` criado no passo 2.
+      for (let index = 1; index <= 3; index += 1) {
+        let elementH3 = document.createElement('h3');
+        elementH3.innerHTML = 'Xablau' + index;
+        elementMain.appendChild(elementH3);
+      }
+
     </script>
   </body>
 </html>
