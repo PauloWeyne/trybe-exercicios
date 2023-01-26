@@ -1,0 +1,23 @@
+.sun {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+
+.sun h1 {
+    font-size: 5rem;
+}
+
+.moon {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background-color: rgb(60, 60, 60);
+}
