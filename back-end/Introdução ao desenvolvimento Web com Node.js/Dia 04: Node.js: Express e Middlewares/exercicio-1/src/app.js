@@ -1,11 +1,17 @@
 const express = require('express');
-const validadeName = require('./middlewares/validateName');
+const validateName = require('./middlewares/validateName');
+const validatePrice = require('./middlewares/validatePrice');
+const validateDescription = require('./middlewares/validateDescription');
 
 const app = express();
 
 app.use(express.json());
 
-app.post('/activities', validadeName, (req, res) => {
+app.post('/activities',
+    validateName, 
+    validatePrice,
+    validateDescription, 
+    (_req, res) => {
     res.status(201).json({ message: 'Atividade registrada com sucesso' });
 });
 
